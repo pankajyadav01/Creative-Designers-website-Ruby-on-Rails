@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>SIGNUP</title>
+</head>
+<style>
+body{
+  position: relative;
+  background-image: url(../images/signup4.jpg);
+  background-size:100% 125%;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 12px;
+    margin-: 8px 0;
+    background-color: rgba(241, 241, 241, 0.47);
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit {
+    width: 100%;
+    padding: 12px 12px;
+    margin-: 8px 0;
+    background-color: #4CAF50;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    float: none;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 4px 0 -15px 0;;
+}
+
+img.avatar {
+    width: 160px;
+    height:160px;
+    /*padding: auto 5px auto 2px;*/
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    position: relative;
+    width:40%;
+}
+.container2 {
+    padding: 6px;
+    position: relative;
+    width:100%;
+}
+
+span.psw {
+    float: right;
+    padding: 15px 16px 5px 10px;
+    font-size: 1.2em;
+}
+/*.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    position: absolute;
+    top: 20%;
+    left:10%;
+    bottom: auto;
+    width: 80%; 
+    height: 20%%; 
+    padding-top: 60px;
+}*/
+
+/* Modal Content/Box */
+/*.modal-content {
+    background-color: rgba(241, 241, 241, 0.47);;
+    margin: 5% auto 15% auto;  5% from the top, 15% from the bottom and centered 
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}*/
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    margin-left: -30%;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+<h2 style="text-align:center;font-size: 3em;font-family:Lucida Caligraphy;color:white;">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="imgcontainer"> 
+    <%=image_tag("apple-touch-icon.png" ,:alt => "Avatar",:class => "avatar")%>
+    <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+  </div>
+<div class="container">
+  <div class="input">
+    <%= f.text_field :name, :placeholder=> 'Full Name', :class=> 'input' %>
+  </div>
+
+  <div class="input">
+    <%= f.email_field :email, :placeholder=> 'Email', :class=> 'input' %>
+  </div>
+
+  <div class="input">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, :placeholder=> 'Password ', :class=> 'input' %>
+  </div>
+
+  <div class="input">
+    <%= f.password_field :password_confirmation, :placeholder=> 'Confirm Password', :class=> 'input' %>
+  </div>
+  <div class="input">
+    <%= f.country_select :country, :placeholder=> 'Country', :class=> 'input' %>
+  </div>
+
+  <div class="input">
+    <%= f.text_field :address, :placeholder=> 'Address', :class=> 'input' %>
+  </div>
+  <div class="input">
+    <%= f.text_field :city, :placeholder=> 'City', :class=> 'input' %>
+  </div>
+  <div class="input">
+    <%= f.text_field :postal_code, :placeholder=> 'Postal Code', :class=> 'input' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", :class=> 'submit' %>
+  </div>
+</div>
+<% end %>
+<div class="container2" style="background-color:rgba(44, 37, 21, 0.5); position:absolute">
+    <div style="width:50%; position:relative; float:left">
+        <%=link_to '<button type="button" class="cancelbtn">Cancel</button>'.html_safe,root_path%></div>
+    <div <div style="width:50%; position:relative; float:right"><span class="psw"><%= render "devise/shared/links" %></span></div>
+  </div>
+  
+<!-- </div> -->
+</body>
+</html>

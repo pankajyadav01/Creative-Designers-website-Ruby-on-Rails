@@ -1,0 +1,9 @@
+<%= form_for([@product,@product.comments.build]) do |f| %>
+	<p>
+		<%= f.text_area :body, :style=>"height: auto;width: 100%;text-overflow: inherit;border-radius: 6px;" %>
+	</p>
+	<br>
+	<p style="margin-top: -25px;">
+		<%= f.submit :Submit, :style=>"width:100%;background-color: rgb(10, 245, 61);padding: 2px 2px 2px 2px;border-radius: 6px;border: 1px solid rgba(255,255,255,0.9);color: #fff;"%>
+	</p>
+<%end%>

@@ -1,0 +1,58 @@
+
+<%= form_for @product, html: { multipart: true} do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :filetype %>
+    <%= f.text_field :filetype, :placeholder=>"PSD/AI/JPG/PNG" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :img_url %>
+    <%= f.file_field :img_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :all_tags %>
+    <%= f.text_field :all_tags %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uploaded_by %>
+    <%= f.text_field :uploaded_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tutorial_url %>
+    <%= f.text_field :tutorial_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

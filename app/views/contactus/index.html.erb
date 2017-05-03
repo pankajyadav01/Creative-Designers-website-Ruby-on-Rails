@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	 	<!---strat-slider-->
+			<script type="text/javascript">
+				$(function() {
+				
+					$('#da-slider').cslider({
+						autoplay	: true,
+						bgincrement	: 450
+					});
+				
+				});
+			</script>
+		<!---//strat-slider-->
+		 <!-- scroll -->
+		 <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <!-- //scroll -->	
+			<!-- start portfolios -->
+		<script type="text/javascript">
+			$('body').flipLightBox()
+		</script>
+		<script type="text/javascript">
+			$(function() {
+
+				var filterList = {
+
+					init : function() {
+
+						// MixItUp plugin
+						// http://mixitup.io
+						$('#portfoliolist').mixitup({
+							targetSelector : '.portfolio',
+							filterSelector : '.filter',
+							effects : ['fade'],
+							easing : 'snap',
+							// call the hover effect
+							onMixEnd : filterList.hoverEffect()
+						});
+
+					},
+
+					hoverEffect : function() {
+
+						// Simple parallax effect
+						$('#portfoliolist .portfolio').hover(function() {
+							$(this).find('.label').stop().animate({
+								bottom : 0
+							}, 200, 'easeOutQuad');
+							$(this).find('img').stop().animate({
+								top : -40
+							}, 500, 'easeOutQuad');
+						}, function() {
+							$(this).find('.label').stop().animate({
+								bottom : -40
+							}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({
+								top : 0
+							}, 300, 'easeOutQuad');
+						});
+
+					}
+				};
+
+				// Run the show!
+				filterList.init();
+
+			});
+		</script>
+	<!-- popup -->
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+					});
+				});
+				</script>
+  <script type="text/javascript">
+    $(function() {
+        $('#portfoliolist a').lightBox();
+    });
+   </script>
+ <!-- nav -->  
+<script type="text/javascript">
+$(document).ready( function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+</script>
+<script>
+window.addEventListener("load",function() {
+  setTimeout(function(){
+    window.scrollTo(0, 1);
+  }, 0);
+});</script>
+</head>
+
+
+
+ <!---cntact-->	
+   		 		<div class="contact s6" id="contact">
+					<div class="wrap">
+						<h3>CONTACT US</h3>
+							<p>Write down your query and ask us the solution to it. SIMPLE :)</p>	
+				        <div class="contact_form">
+							 	 	    <%= form_tag contactus_path do %>
+										    	<span><%= text_field_tag :name,value="NAME"%><label><%= image_tag("con1.png" )%></label></span>									    
+										    	<span><%= text_field_tag :email, value="EMAIL"%><label><%= image_tag("con2.png")%></label></span>
+										    <div class="clear"></div>
+										    	<span><%= text_area_tag :msg, value="MESSAGE"%><label1><%= image_tag("con3.png", :style=>"padding-top: 25px;")%></label1></span>
+										   		<%= submit_tag :Submit, :value=>"Submit"%>
+									    <%end%>
+						 </div>
+					</div>
+				</div>
+		   		 <div class="map">
+		   		 <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.1821494280093!2d77.04909099999999!3d28.504167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d199c98e90ff1%3A0x8b2aa76c53fb738e!2sThe+Northcap+University+-+Engineering%2C+Management+%26+Law+University+in+Gurgaon!5e0!3m2!1sen!2sin!4v1493299423333" style="border:0"></iframe>
+
+					<!-- <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small> -->
+			     </div>
+			     
+		   		  <div class="signup">
+   		              <div class="form">	
+							<span><label><%= image_tag("msg.png" )%></label><input type="text" value="Your E-MAIL Please?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-MAIL Please?';}"></span>
+							<span><input type="submit" value="Sign Up Now" id="submit" name="submit"></span>
+							<p>Promise we do not spam : )</p>
+							<div class="clear"> </div>
+					  </div>
+   		         </div>
+   		         </html>

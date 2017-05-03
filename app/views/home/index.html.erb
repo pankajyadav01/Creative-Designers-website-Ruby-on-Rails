@@ -1,0 +1,293 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	 	<!---strat-slider-->
+			<script type="text/javascript">
+				$(function() {
+				
+					$('#da-slider').cslider({
+						autoplay	: true,
+						bgincrement	: 450
+					});
+				
+				});
+			</script>
+		<!---//strat-slider-->
+		 <!-- scroll -->
+		 <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <!-- //scroll -->	
+			<!-- start portfolios -->
+		<script type="text/javascript">
+			$('body').flipLightBox()
+		</script>
+		<script type="text/javascript">
+			$(function() {
+
+				var filterList = {
+
+					init : function() {
+
+						// MixItUp plugin
+						// http://mixitup.io
+						$('#portfoliolist').mixitup({
+							targetSelector : '.portfolio',
+							filterSelector : '.filter',
+							effects : ['fade'],
+							easing : 'snap',
+							// call the hover effect
+							onMixEnd : filterList.hoverEffect()
+						});
+
+					},
+
+					hoverEffect : function() {
+
+						// Simple parallax effect
+						$('#portfoliolist .portfolio').hover(function() {
+							$(this).find('.label').stop().animate({
+								bottom : 0
+							}, 200, 'easeOutQuad');
+							$(this).find('img').stop().animate({
+								top : -40
+							}, 500, 'easeOutQuad');
+						}, function() {
+							$(this).find('.label').stop().animate({
+								bottom : -40
+							}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({
+								top : 0
+							}, 300, 'easeOutQuad');
+						});
+
+					}
+				};
+
+				// Run the show!
+				filterList.init();
+
+			});
+		</script>
+	<!-- popup -->
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+					});
+				});
+				</script>
+  <script type="text/javascript">
+    $(function() {
+        $('#portfoliolist a').lightBox();
+    });
+   </script>
+ <!-- nav -->  
+<script type="text/javascript">
+$(document).ready( function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+</script>
+<script>
+window.addEventListener("load",function() {
+  setTimeout(function(){
+    window.scrollTo(0, 1);
+  }, 0);
+});</script>
+</head>
+<body>
+	<!-- start slider -->
+	<div class="parent">
+<div style="margin-top: 9%;position: absolute;width: 100%;;text-align: center;">
+<% if user_signed_in?%>
+<a style="font-family: lucida;font-size: 50px;color: white;background: none;">Welcome <%= current_user.name%></a>
+<%end%>
+</div>
+<div id="search-bar">
+<%= form_tag products_path, :action=>"index", :method=>"get" do %>
+<%= text_field_tag :tag, params[:tag], :name=>"Search", :placeholder=>"   Search Anything", :id=>"s-bar" %>
+<%= submit_tag "Search",:name=>"Search", :value=>"Search", :style=>"width: 100px; border: none; background: #eee; font-size: 25px; position: relative; top: 5px; display: none;"%>
+<%end%>
+</div>
+
+
+
+<div class="slider_bg s7">
+	<%= image_tag("bg2.jpg")%>
+ </div>
+</div>
+ <a  href="#services" class="button scroll"><%= image_tag("arrow.png")%></a>	
+ 	<!--start header -->
+ 	<div class="header">
+ 		<div class="logo">
+ 			<a  href="#s7" class="scroll"><%= image_tag("logo_here.jpg")%></a>
+ 		</div>
+
+
+
+
+		<!-- start top-nav-->
+		<nav>
+		<div class="h_right">	
+			<center>
+		<div id="nav" class="subMenu" >
+			
+			<div class="wrap">
+				
+		 	 	<div class="inner" >
+		 	 		<ul>
+		 			<li id="s" class="subNavBtn"><%=link_to "SERVICES",home_blogs_path%></li>
+					<li id="s" class="subNavBtn"><%=link_to "PROJECTS",home_blogs_path%></li>
+					<li id="s" class="subNavBtn"><%=link_to "ABOUT US",home_blogs_path%></li>
+					<li id="s" class="subNavBtn"><%=link_to "STORE",products_path%></li>
+					<li id="s" class="subNavBtn"><%=link_to "BLOGS",home_blogs_path%></li>
+					<li id="s" class="subNavBtn end"><%=link_to "VECTORS",products_path%></li>
+					<li id="s" class="subNavBtn"><%=link_to "CONTACT",contactus_path%></li>
+					</ul>
+			  	</div>
+			  	<div id="ll">
+			   <!-- /.navbar-collapse -->
+			   <% if user_signed_in?%>
+			   <a class="btn btn-dark btn-lg"><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %></a>
+			   <%else%>
+	             	<a class="btn btn-dark btn-lg" data-target="#myModaltask" data-toggle="modal"><%=image_tag("logo-login.png" , :class => "style_image")%></a>
+	             	<%end%>
+	             	<a class="btn btn-dark btn-lg"><span class="search-btn"><%=image_tag("search-img.png" , :class => "style_image")%></span></a>
+	       
+	             	<div>
+	                <div class="clearfix"> </div>	
+	    	</div>	
+	    	</center>
+	   	</div>
+	   </nav>
+	   <div id="sidelinks">
+	<a href="http://www.fb.com/" target="_blank"><%= image_tag("facebook.png", :id =>"sideicons1")%></a><br>
+	<a href="http://www.whatsapp.com/" target="_blank"><%= image_tag("whatsapp.png", :id =>"sideicons2")%></a><br>
+	<a href="http://www.google.com/" target="_blank"><%= image_tag("google-plus.png", :id =>"sideicons3")%></a><br>
+	<a href="http://www.instagram.com/" target="_blank"><%= image_tag("instagram.png", :id =>"sideicons4")%></a>
+</div>
+
+<div class="modal fade" id="myModaltask" role="dialog">
+<div class="modal-dialog modal-md">
+<div class="modal-content">
+<div class="modal-header" style="background-color:#5B90F6;border-radius: 5px 5px 0px 0px;box-shadow: 0px 4px 10px #666; text-align:center;"><button class="close" data-dismiss="modal" type="button">×</button>
+
+<h2 class="modal-title" style="color:#FFFFFF;">OPTIONS</h2>
+</div>
+<div style="padding: 50px;padding-bottom: 5px;">
+<a><%=link_to "LOGIN",new_user_session_path, :style=>"background-color: #337ab7;border-radius: 6px;padding: 10px;color: white;margin: 110px;"%></a>
+<a><%=link_to "SIGNUP",new_user_registration_path, :style=>"background-color: #337ab7;border-radius: 6px;padding: 10px;color: white;"%></a>
+<div class="modal-footer" style="margin-top: 35px;"><button class="btn btn-primary" data-dismiss="modal" type="button">Close</button></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- 
+
+<div id="links">
+<span class="nav-btn">MENU</span>
+<div id="site-links">
+   <ul id="navin">
+    <li><a href="#" id="main-link">Home</a></li>
+	<li><a href="#" id="main-link">Updates</a></li>
+	<li><a href="#" id="main-link">Data</a></li>
+	<li><a href="#" id="main-link">Datesheet</a></li>
+	<li><a href="#" id="main-link">Contact</a></li>
+	<li><span class="search-btn"><%=image_tag("search-img.png" , :class => "style_image")%></span></li>
+   </ul>
+ -->
+<script>
+$('span.search-btn').click(function(){
+	$('#search-bar').slideToggle();
+})
+</script>
+<script>
+$('span.nav-btn').click(function(){
+	$('#navin').slideToggle();
+})
+</script>
+</div>
+</div>
+
+			<!-- start smart_nav * -->
+		 	<nav class="nav">
+	            <ul class="nav-list">
+	                <li class="nav-item"><a href="#services">Services</a></li>
+	                 <li class="nav-item"><a href="#work" class="scroll">Services</a></li>
+	                  <li class="nav-item"><a href="#about" class="scroll">About us</a></li>
+	                   <li class="nav-item"><a href="#blog" class="scroll">Blogs</a></li>
+	                <li class="nav-item"><a href="#studio" class="scroll">Photos</a></li>
+	                <li class="nav-item"><a href="#pricing" class="scroll">Login</a></li>	            	               
+	                <li class="nav-item"><a href="#contact"  class="scroll">Contact</a></li>
+	                <div class="clear"></div>
+	            </ul>
+	    	</nav>
+			<!-- end smart_nav * -->
+		</div>
+		<div class="clear"></div>
+	  </div>
+<!---//End-header-->	
+
+   		        <!--start-bottom-footer-->
+				<div class="bottom-footer">
+					<div class="wrap"> 
+						<div class="bottom-footer-center">
+							<ul class="bottom-social-icons">
+								<li><a class="bottom-twitter" href="#"> </a></li>
+								<li><a class="bottom-facebook" href="#"> </a></li>
+								<li><a class="bottom-pin" href="#"> </a></li>
+								<li><a class="bottom-google" href="#"> </a></li>
+								<div class="clear"> </div>
+							</ul>
+						</div>	
+						<div class="bottom-footer-left">
+							<p><span>&#169; Copyright 2017</span></a></p>
+						</div>		  
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<!--//End-bottom-footer-->
+ <!-- scroll_top_btn -->
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+
+		 <a href="#da-slider" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+</body>
+</html>

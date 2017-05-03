@@ -1,0 +1,16 @@
+<% if user_signed_in?%>
+<h2 style="text-transform: uppercase; color: #fff;font-size: 2rem; padding-top: 10px;">
+<%= current_user.name %></h2>
+<%else%>
+<h2 style="text-transform: uppercase; color: #fff;font-size: 2rem; padding-top: 10px;">
+U NEED TO LOGIN TO SEE THIS USER</h2>
+<%end%>
+<p style=" color: #fff;"><%= comment.body %></p>
+<p style=" color: #fff;"><%= time_ago_in_words(comment.created_at)%></p>
+<% if user_signed_in?%>
+<% if @product.user == current_user || current_user.admin?%>
+<p><%= link_to 'Delete',[comment.product,comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<hr>
+<%end%>
+<%end%>
+</p>

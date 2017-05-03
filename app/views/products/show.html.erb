@@ -1,0 +1,97 @@
+<body style="background-image:url('/images/Linux Wallpaper.jpg');">
+
+<div class="panel panel-default panel-list" style="width:70%;margin:20px auto;background-color: rgba(255,255,255,0.1);">
+    <div class="panel-heading" style="background-color:rgba(223, 223, 223, 0.78);">
+        <h3 class="panel-title" style="font-family:lucida;display:bold;">
+        <% if @product.user == current_user %>
+          <p style="float: right;"><%= link_to 'Edit', edit_product_path(@product), :style=>"background-color:rgb(10, 245, 61);padding: 10px 10px 10px 10px;border-radius: 6px; border:1px solid rgba(255,255,255,0.9);"  %> </p>
+<%end%>
+          <p style="float: left;"><%= link_to 'Back', products_path, :style=>"background-color:rgb(10, 245, 61);padding: 10px 10px 10px 10px;border-radius: 6px; border:1px solid rgba(255,255,255,0.9);" %><p>
+           <center>YOUR PRODUCT : <%=@product.title%></center> 
+        </h3>
+    </div>
+    <div class="panel-body" style="background-color:rgba(255,255,255,0.1);">
+
+    <div class="row">
+    <div>
+        <div class="col-lg-9 col-md-4" style="padding-left:30px;">
+            <%= image_tag(@product.img_url.url(:large),:style => "height:400px;width:800px;border-radius: 4px; border:1px solid rgba(255,255,255,0.9);") %>
+        </div>
+        <div>
+        <% if @product.price != 0 %>
+    <%= link_to '<button type="button" style="width: 16%;height: 16%;position: absolute;background-color: rgb(0, 144, 31);font-size: 3rem;border-radius: 6px;border: 1px solid rgba(255,255,255,0.9);color: #fff;">BUY</button>'.html_safe%>
+    <%else%>
+    <%= link_to '<button type="button" style="width: 16%;height: 16%;position: absolute;background-color: rgb(0, 144, 31);font-size: 2rem;border-radius: 6px;border: 1px solid rgba(255,255,255,0.9);color: #fff;">DOWNLOAD</button>'.html_safe%>
+    <%end%>               
+    <!-- ADVERTISEMENTS -->
+      <p style="text-align: center;border-radius: 6px;background-color: #fff;width: 23%;margin-top: 12%;margin-right: 2%;min-height: 285px;padding-top: 15%;position: relative;float: right;color: rgb(0,144,31);border: 2px solid rgb(0, 144, 31);"> PLACE ADS HERE</p>
+    </div>
+    
+        </div><br>
+        <div class="col-lg-6 col-md-4">
+              <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">Name:</strong><br>
+            <div style="color: lime;font-family: serif;font-size:2em;">
+            <%= @product.title%>
+                </div>
+        </div>
+             <div class="col-lg-6 col-md-4">
+              <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">File Type:</strong><br>
+            <div style="color: lime;font-family: serif;font-size:2em;">
+            <%= @product.filetype%>
+                </div>
+        </div>
+<div style="padding-right:10%;">
+<div class="col-lg-7 col-md-4">
+  <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">Price:</strong><br>
+        <div style="color: lime;font-family: serif;font-size:2em;">
+  <%= @product.price %>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-6">
+  <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">Description:</strong><br>
+        <div style="color: lime;font-family: serif;font-size:2em;">
+  <%= @product.description %>
+        </div>
+        </div>
+    
+    <div style="padding-right:10%;">
+<div class="col-lg-12 col-md-6">
+  <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">Tags:</strong><br>
+        <div style="color: lime;font-family: serif;font-size:2em;">
+  <%= @product.all_tags %>
+        </div>
+        </div>
+        <div>
+        <strong style="color: #00e2ff;font-family: initial;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">UPLOADED BY : </strong>
+        <div style="color: lime;font-family: serif;font-size:2em;">
+          <%= @product.user.name%>
+          </div>
+        </div>
+<div class="col-lg-12 col-md-6" style="    margin-top: 50px;">
+<h2 style="color: #0a03b2;;font-family: initial;font-size:2.5em;-webkit-text-stroke: 1px #989898;font-weight:bolder;"><%= @product.comments.count %> COMMENTS</h2>
+<p><%= render @product.comments %></p>
+<hr>
+<h3  style=" color: #fff;font-size: 1.2em;"> ADD A COMMENT </h3>
+<% if user_signed_in?%>
+<p><%= render 'comments/form'%></p>
+<%end%>
+</div>
+<div>
+<strong style="color: #00e2ff;font-family: initial;margin-left: 20px;-webkit-text-stroke: 1px black;font-size:2em;font-weight:bolder;">VIDEO TUTORIAL:</strong><br>
+<% if user_signed_in?%>
+  <iframe width="600" height="420"
+src="https://www.youtube.com/embed/<%= @product.tutorial_url %>">
+</iframe>
+<%end%>
+</div>
+<div>
+  <% if user_signed_in?%>
+<p><%= render 'results/index'%></p>
+<%end%>
+</div>
+
+    </div>
+    </div>
+</div>
+</div>

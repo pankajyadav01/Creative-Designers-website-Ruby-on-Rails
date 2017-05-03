@@ -1,0 +1,661 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	 	<!---strat-slider-->
+			<script type="text/javascript">
+				$(function() {
+				
+					$('#da-slider').cslider({
+						autoplay	: true,
+						bgincrement	: 450
+					});
+				
+				});
+			</script>
+		<!---//strat-slider-->
+		 <!-- scroll -->
+		 <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <!-- //scroll -->	
+			<!-- start portfolios -->
+		<script type="text/javascript">
+			$('body').flipLightBox()
+		</script>
+		<script type="text/javascript">
+			$(function() {
+
+				var filterList = {
+
+					init : function() {
+
+						// MixItUp plugin
+						// http://mixitup.io
+						$('#portfoliolist').mixitup({
+							targetSelector : '.portfolio',
+							filterSelector : '.filter',
+							effects : ['fade'],
+							easing : 'snap',
+							// call the hover effect
+							onMixEnd : filterList.hoverEffect()
+						});
+
+					},
+
+					hoverEffect : function() {
+
+						// Simple parallax effect
+						$('#portfoliolist .portfolio').hover(function() {
+							$(this).find('.label').stop().animate({
+								bottom : 0
+							}, 200, 'easeOutQuad');
+							$(this).find('img').stop().animate({
+								top : -40
+							}, 500, 'easeOutQuad');
+						}, function() {
+							$(this).find('.label').stop().animate({
+								bottom : -40
+							}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({
+								top : 0
+							}, 300, 'easeOutQuad');
+						});
+
+					}
+				};
+
+				// Run the show!
+				filterList.init();
+
+			});
+		</script>
+	<!-- popup -->
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+					});
+				});
+				</script>
+  <script type="text/javascript">
+    $(function() {
+        $('#portfoliolist a').lightBox();
+    });
+   </script>
+ <!-- nav -->  
+<script type="text/javascript">
+$(document).ready( function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+</script>
+<script>
+window.addEventListener("load",function() {
+  setTimeout(function(){
+    window.scrollTo(0, 1);
+  }, 0);
+});</script>
+</head>
+<body>
+
+<!-- services -->	
+     <div class="services sTop" id="services">
+		  	<div class="wrap">
+		  		<h3>SERVICES</h3>
+		  		<p>Pfbfgbndfljbndfjbndfjknbv.</p>
+				<div class="col_1_of_3 span_1_of_3">
+					<%= image_tag("service1.png")%>
+					<h4><a href="#">PIXEL PERFECT</a></h4>
+					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
+					<p><a href="#">MORE</a></p>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<%= image_tag("service2.png")%>
+					<h4><a href="#">DESIGN</a></h4>
+					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
+					<p><a href="#">MORE</a></p>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<%= image_tag("service3.png")%>
+					<h4><a href="#">THEME</a></h4>
+					<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
+					<p><a href="#">MORE</a></p>
+				</div>
+				 <div class="clear"></div>
+   		   </div>
+   		 </div>
+   		 <div class="portfoliO s1" id="work"><!-- start portfoli1 -->
+   		 <div class="wrap">	
+		 <h3>Photos</h3>
+		 <p>jdfhvushisdusidfgvisdygfydfgsdivgsidyvgfsdyfgvsdiygvfsidgvsiddischsuihd</p>
+		 <div class="container"><!-- start container -->		 
+	       <!-- start h_menu -->
+				<div class="h_menu">
+				<ul class="flexy-menu thick orange">
+				                <li class="active"> <span class="filter active" data-filter="app card icon web">VIEW ALL</span></li>
+				                <li><span class="filter" data-filter="app  icon">ILLUSTRATION</span></li>
+				                <li><span class="filter" data-filter="card ">LOGO</span></li>				            
+				                <li><span class="filter" data-filter="icon app card ">PHOTOGRAPHY</span></li>
+				                <li><span class="filter" data-filter="web card icon">POSTER</span></li>
+				</ul>
+				</div>	<!-- end h_menu -->
+				<script type="text/javascript">$(document).ready(function(){$(".flexy-menu").flexymenu({speed: 400,type: "horizontal",align: "right"});});</script>
+
+			<!-- end smart_nav * -->
+						<ul id="filters" class="clearfix">
+							<li>
+								<span class="filter active" data-filter="app card icon web">VIEW ALL</span>
+							</li>
+							<li>
+								<span class="filter" data-filter="app  icon">ILLUSTRATION</span>
+							</li>
+							<li>
+								<span class="filter" data-filter="card ">LOGO</span>
+							</li>
+							<li>
+								<span class="filter" data-filter="icon app card ">PHOTOGRAPHY</span>
+							</li>
+							<li>
+								<span class="filter" data-filter="web card icon">POSTER</span>
+							</li>
+						</ul>
+						
+						<div id="portfoliolist">
+							<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port.jpg")%> </a>
+									
+								</div>
+							</div>						
+							<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port1.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port.jpg" )%> </a>								
+								</div>
+							</div>
+							<div class="portfolio web mix_all" data-cat="web" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port2.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port2.jpg" )%> </a>							
+								</div>
+							</div>
+							<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port3.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port3.jpg")%> </a>
+									
+								</div>
+							</div>
+							<div class="portfolio web mix_all" data-cat="web" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port4.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port4.jpg")%> </a>
+									
+								</div>
+							</div>
+							<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+								<div class="portfolio-wrapper">
+									<a href="port5.jpg #small-dialog1" class="flipLightBox popup-with-zoom-anim"><%= image_tag("port5.jpg")%> </a>
+								
+								</div>
+							</div>
+																
+						</div>				
+						</div>	
+						<div class="img">
+							<a href="#"><%= image_tag("zoom.png")%></a>	
+						</div>						
+			</div><!-- end container -->
+		</div>
+  <!--start-team-members-->
+				<div class="team-members s2" id="about">
+					<div class="wrap"> 
+						<div class="tm-head">
+							<h3>ABOUT US</h3>
+							<p>jdvdnfhgbvgsvusdgvcustgdvusgdvusvg.</p>
+						</div>
+						<div class="tm-head-grids">
+							<div class="tm-head-grid">
+								<%= image_tag("team-member1.jpg" )%>
+								<h4>Pankaj Yadav</h4>
+								<h5>CEO</h5>
+								<ul class="top-social-icons">
+									<li><a class="twitter simptip-position-bottom simptip-movable" data-tooltip="twitter" href="#"> </a></li>
+									<li><a class="facebook simptip-position-bottom simptip-movable" data-tooltip="Facebook" href="#"> </a></li>
+									<li><a class="pin simptip-position-bottom simptip-movable" data-tooltip="pintrest" href="#"> </a></li>
+									<div class="clear"> </div>
+								</ul>
+							</div>
+							<div class="tm-head-grid">
+								<%= image_tag("team-member2.jpg")%>
+								<h4>Yadav Pankaj</h4>
+								<h5>Designer</h5>
+								<ul class="top-social-icons">
+									<li><a class="twitter simptip-position-bottom simptip-movable" data-tooltip="twitter" href="#"> </a></li>
+									<li><a class="facebook simptip-position-bottom simptip-movable" data-tooltip="Facebook" href="#"> </a></li>
+									<li><a class="pin simptip-position-bottom simptip-movable" data-tooltip="pintrest" href="#"> </a></li>
+									<div class="clear"> </div>
+								</ul>
+							</div>
+							<div class="tm-head-grid">
+								<%= image_tag("team-member3.jpg")%>
+								<h4>PY</h4>
+								<h5>Developer</h5>
+								<ul class="top-social-icons">
+									<li><a class="twitter simptip-position-bottom simptip-movable" data-tooltip="twitter" href="#"> </a></li>
+									<li><a class="facebook simptip-position-bottom simptip-movable" data-tooltip="Facebook" href="#"> </a></li>
+									<li><a class="pin simptip-position-bottom simptip-movable" data-tooltip="pintrest" href="#"> </a></li>
+									<div class="clear"> </div>
+								</ul>
+							</div>
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+				<!--//End-team-members--> 
+<!--start-team-members-->
+				<div class="experience">
+					<div class="wrap"> 
+						<div class="ex-head">
+							<h3>OUR EXPERIENCE</h3>
+							<p>djvnodhbfisdybgvishbdcoidyshvidnvdishbcihfbduovboduscbubfd.</p>
+						</div>
+						<div class="prog">
+								<div class="text">
+									<span>Web designer</span>
+								</div>
+								<div class="text_p">
+									<span>90%</span>
+								</div>
+								<div class="clear"></div>
+								<div class="progress-bar-container" data-percent="90%">
+									<div class="progress-bar" style="width: 90%;">
+									</div>
+								</div>
+							</div>
+							<div class="prog1">
+								<div class="text">
+									<span>HTML/css</span>
+								</div>
+								<div class="text_p">
+									<span>40%</span>
+								</div>
+								<div class="clear"></div>
+								<div class="progress-bar-container" data-percent="90%">
+									<div class="progress-bar1" style="width: 40%;">
+									</div>
+								</div>
+							</div>
+							<div class="prog2">
+								<div class="text">
+									<span>illustration</span>
+								</div>
+								<div class="text_p">
+									<span>60%</span>
+								</div>
+								<div class="clear"></div>
+								<div class="progress-bar-container" data-percent="90%">
+									<div class="progress-bar2" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+				<!--//End-team-members--> 
+				<!--fun -->
+				<div class="fun">
+					<div class="wrap"> 
+						<div class="fun-head">
+							<h3>FACTS</h3>							
+						</div>
+						<div class="fun-head-grids">
+							<div class="fun-head-grid">
+								<%= image_tag("fact1.png")%>
+								<h4>638</h4>
+								<h5>PLACES</h5>						
+							</div>
+							<div class="fun-head-grid">
+								<%= image_tag("fact2.png" )%>
+								<h4>746</h4>
+								<h5>CLIENTS</h5>					
+							</div>
+							<div class="fun-head-grid">
+								<%= image_tag("fact3.png")%>
+								<h4>887</h4>
+								<h5>SONGs</h5>								
+							</div>
+							<div class="fun-head-grid">
+								<%= image_tag("fact4.png")%>
+								<h4>1047</h4>
+								<h5>PROJECTS</h5>								
+							</div>
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+				<!--//End-fun--> 
+   		        <!--start-blog-->
+				<div class="blog s3" id="blog">
+					<div class="wrap"> 
+						<div class="blog-head">
+							<h3>BLOG</h3>
+							<p>jhdsvisgysdhbh.</p>
+						</div>
+						<div class="blog-grid">
+							<div class="blog-left">
+							 	<div class="img-left">
+							 		<%= image_tag("blog1.jpg")%>
+							 	</div>	
+							 	<div class="text-right">
+							 		<h6>March 29, 2017</h6>
+							 		<h3><a href="#">m;zjcdhpsuii</a></h3>
+									<%= image_tag("line.png")%>
+							 		<p>jcfhdiuhmcoidfbmlc</p>
+							 		<p><a href="#">MORE</a></p>
+							 	</div>
+							    <div class="clear"> </div>
+							</div>
+							<div class="blog-right">
+							 	<div class="img-left">
+							 		<%= image_tag("blog2.jpg")%>
+							 	</div>	
+							 	<div class="text-right">
+							 		<h6>March 29, 2017</h6>
+							 		<h3><a href="#">bkhbvldhbvkdlhsvE</a></h3>
+							 		<%= image_tag("line.png")%>
+							 		<p>dnfcvlkjxfvnckjklbfhldkbf</p>
+							 		<p><a href="#">MORE</a></p>
+							 	</div>
+							    <div class="clear"> </div>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="blog-grid">
+							<div class="blog-left">
+							 	<div class="img-left">
+							 		<%= image_tag("blog3.jpg")%>
+							 	</div>	
+							 	<div class="text-right">
+							 		<h6>March 29, 2017</h6>
+							 		<h3><a href="#">ljcvkddbvfxkjfbvdkjfbvd</a>
+							 		<p>jsdhvdnkjbdhshvdsiyckslhbdklsbcskl</p>
+							 		<p><a href="#">MORE</a></p>
+							 	</div>
+							    <div class="clear"> </div>
+							</div>
+							<div class="blog-right">
+							 	<div class="img-left">
+							 		<%= image_tag("blog4.jpg" )%>
+							 	</div>	
+							 	<div class="text-right">
+							 		<h6>56462464624654</h6>
+							 		<h3><a href="#">hsdfcushdbxdsklhbxdsklh</a></h3>
+							 		<%= image_tag("line.png" )%>
+							 		<p>znvlxncljvnlxcnvlxvljdvnlsjdfnvsldj;fvnd</p>
+							 		<p><a href="#">MORE</a></p>
+							 	</div>
+							    <div class="clear"> </div>
+							</div>
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+				<!--//End-blog--> 
+		 		<!-- strat-studio-->
+   		        <div class="studio s4" id="studio">
+					<div class="wrap"> 
+						<div class="studio-head">
+							<h3>dsncjsnsl</h3>
+							<p>ksdvksdsdnfvsjdfvnsdjfvnsd;dsvbd</p>						
+						</div>
+						</div>
+						<iframe width="600" height="400"
+src="https://youtu.be/muJg2frXaMY">
+</iframe>
+
+				</div>			
+				<!--//End-studio--> 
+   		       <!-- strat-clent-->
+		   	    <div class="clients">
+					<div class="wrap"> 
+						<div class="client-head">
+							<h3>CLIENTS</h3>											
+						</div>
+						<!---strat-image-cursuals-->
+		                  <div class="t-clients">
+		                  	<div class="wrap"> 											 
+									<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul class="flexiselDemo3 nbs-flexisel-ul" style="left: -253.6px; display: block;">					    					    					       
+									<li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client1.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client2.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client3.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client4.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client5.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client1.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client2.png")%></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><%= image_tag("client3.png")%></li></ul><div class="nbs-flexisel-nav-left" style="top: 21.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 21.5px;"></div></div></div> 
+									<div class="clear"> </div>      
+								  <!---strat-image-cursuals-->
+										<!---End-image-cursuals-->
+										<script type="text/javascript">
+										$(window).load(function() {
+										    $(".flexiselDemo3").flexisel({
+										        visibleItems: 5,
+										        animationSpeed: 1000,
+										        autoPlay: true,
+										        autoPlaySpeed: 3000,            
+										        pauseOnHover: true,
+										        enableResponsiveBreakpoints: true,
+										        responsiveBreakpoints: { 
+										            portrait: { 
+										                changePoint:480,
+										                visibleItems: 1
+										            }, 
+										            landscape: { 
+										                changePoint:640,
+										                visibleItems: 2
+										            },
+										            tablet: { 
+										                changePoint:768,
+										                visibleItems: 3
+										            }
+										        }
+										    });
+										});
+										</script>
+								<!---->
+						  		<!---->
+						 	 </div>				
+						</div>
+					</div>					
+				</div>
+				<!--//End-clients--> 
+				  <div class="pricing s5" id="pricing">
+					<div class="wrap"> 
+						<div class="pricing-head" style="margin-bottom: 60px;">
+							<h3>PRICING</h3>
+							<p>vjknckjsdfvnxkjdfkfxkllshkdhbvdsklbxd.</p>						
+						</div>								
+			   		 	<div class="pricing-grids">
+									<div class="pricing-grid1">	
+										<h3><a href="#">$<span>9</span><p>month</p></a></h3>						
+										<div class="price-value">
+											<a href="#">MINI</a>
+										</div>
+										<%= image_tag("border.png")%>
+										<ul>
+											<li><a href="#">dsfkbskdbfdskfb</a></li>
+											<li><a href="#">dfnjldsnsdjlnsd;jfbskdhbsdf</a></li>
+											<li><a href="#">dfsknknljnsldjf</a></li>
+											<li><a href="#">lnfvdshouhfobfoncsnofvnf</a></li>
+											<li><a href="#">kznvlsndvl;jsdnljn</a></li>
+											<li><a href="#">lkdcnasidvosdjvdsjovnsodufv</a></li>
+										</ul>
+										<div class="cart1">
+											<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><j>TRY</j></a>
+										</div>	
+										</div>
+									</div>
+									<div class="pricing-grid2">
+										<h3><a href="#">$<span>29</span><p>month</p></a></h3>
+										<div class="price-value">
+											<a href="#">STANDARD</a>
+										</div>
+										<%= image_tag("border.png")%>
+										<ul>
+											<li><a href="#">aaaaaaaaaaaa</a></li>
+											<li><a href="#">bbbbbbbbbbbbbbbbbbbbbbbbb</a></li>
+											<li><a href="#">Avvvvvvvvvvvvvvvvvvvvv</a></li>
+											<li><a href="#">Pcccccccccccccccccc</a></li>
+											<li><a href="#">eeeeeeeeeeeeeeeeeee</a></li>
+											<li><a href="#">eeeeeeeeeeeeeeeeeeeeeeeee</a></li>
+											<li><a href="#">fffffffffffffffff</a></li>
+											<li><a href="#">gggggggggggggggggggggggggggggggggg</a></li>
+										</ul>
+										<div class="cart1">
+											<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><k>TRY</k></a>
+										</div>	
+										</div>
+									</div>
+									<div class="pricing-grid3">	
+										<h3><a href="#">$<span>99</span><p>month</p></a></h3>						
+										<div class="price-value">
+											<a href="#">PREMIUM</a>
+										</div>	
+										<%= image_tag("border.png" )%>									
+										<ul>
+											<li><a href="#">dfsgdsfgsdfgsdfg</a></li>
+											<li><a href="#">dsfgsdfgdsfgadfvcvffgb</a></li>
+											<li><a href="#">kuyiktyjrhrtg</a></li>
+											<li><a href="#">wewersdsdfsdfrggthh</a></li>
+											<li><a href="#">aaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+											<li><a href="#">bbbbbbbbbbbbbbb</a></li>
+											<li><a href="#">Dccccccccccccccccccccccccc</a></li>
+											<li><a href="#">Addddddddddddddddddd</a></li>
+											<li><a href="#">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a></li>
+											<li><a href="#">fffffffff</a></li>
+										</ul>
+										<div class="cart1">
+											<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><l>TRY</l></a>
+										</div>	
+										</div>
+									</div>																											
+										<!---pop-up-grid-->
+											 <div id="small-dialog" class="mfp-hide">
+												<div class="pop_up">
+												 	<div class="payment-online-form-left">
+														<form>
+															<h4><span class="shipping"> </span>Shipping</h4>
+															<ul>
+																<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
+																<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
+															</ul>
+															<ul>
+																<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
+																<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
+															</ul>
+															<ul>
+																<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
+																<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
+																<div class="clear"> </div>
+															</ul>
+															<div class="clear"> </div>
+														<ul class="payment-type">
+															<h4><span class="payment"> </span> Payments</h4>
+															<li><span class="col_checkbox">
+																<input id="3" class="css-checkbox1" type="checkbox">
+																<label for="3" name="demo_lbl_1" class="css-label1"> </label>
+																<a class="visa" href="#"> </a>
+																</span>
+																
+															</li>
+															<li>
+																<span class="col_checkbox">
+																	<input id="4" class="css-checkbox2" type="checkbox">
+																	<label for="4" name="demo_lbl_2" class="css-label2"> </label>
+																	<a class="paypal" href="#"> </a>
+																</span>
+															</li>
+															<div class="clear"> </div>
+														</ul>
+															<ul>
+																<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
+																<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
+																<div class="clear"> </div>
+															</ul>
+															<ul>
+																<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
+																<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
+																<div class="clear"> </div>
+															</ul>
+															<ul class="payment-sendbtns">
+																<li><input type="reset" value="Cancel"></li>
+																<li><input type="submit" value="Process order"></li>
+															</ul>
+															<div class="clear"> </div>
+														</form>
+													</div>
+									  			</div>
+											</div>
+											<!--pop-up-grid-->
+										</div>
+						<div class="clear"> </div>
+   		            </div>
+				</div>
+				<!--logos-->	
+		   		 <div class="logos"> 
+		   		 	<div class="wrap"> 
+			   		 	<ul>
+			   		 		<li><%= image_tag("client6.png")%></li>
+			   		 		<li><%= image_tag("client7.png")%></li>
+			   		 		<li><%= image_tag("client8.png" )%></li>
+			   		 	</ul>
+		   		 	</div>
+		   		 </div>
+		   		
+   		        <!--start-bottom-footer-->
+				<div class="bottom-footer">
+					<div class="wrap"> 
+						<div class="bottom-footer-center">
+							<ul class="bottom-social-icons">
+								<li><a class="bottom-twitter" href="#"> </a></li>
+								<li><a class="bottom-facebook" href="#"> </a></li>
+								<li><a class="bottom-pin" href="#"> </a></li>
+								<li><a class="bottom-google" href="#"> </a></li>
+								<div class="clear"> </div>
+							</ul>
+						</div>	
+						<div class="bottom-footer-left">
+							<p><span>&#169; Copyright 2017</span></a></p>
+						</div>		  
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<!--//End-bottom-footer-->
+ <!-- scroll_top_btn -->
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+
+		 <a href="#da-slider" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+</body>
+</html>
